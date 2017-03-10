@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './Character.css';
 
 const Character = ({
   company,
   constitution,
-  dateCreated,
   department,
   dexterity,
   email,
@@ -12,6 +11,7 @@ const Character = ({
   hp,
   intelligence,
   lastName,
+  number,
   strength
 }) => (
   <article className="Character">
@@ -56,13 +56,25 @@ const Character = ({
           <th>Constitution</th>
           <td>{constitution}</td>
         </tr>
-        <tr>
-          <th>Intelligence</th>
-          <td>{intelligence}</td>
-        </tr>
       </tbody>
     </table>
+    <p>#{number}</p>
   </article>
 );
+
+Character.propTypes = {
+  company: PropTypes.string,
+  constitution: PropTypes.number,
+  dateCreated: PropTypes.string,
+  department: PropTypes.string,
+  dexterity: PropTypes.number,
+  email: PropTypes.string,
+  firstName: PropTypes.string,
+  hp: PropTypes.number,
+  intelligence: PropTypes.number,
+  lastName: PropTypes.string,
+  number: PropTypes.number,
+  strength: PropTypes.number
+};
 
 export default Character;

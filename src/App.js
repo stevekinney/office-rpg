@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    database.ref('characters').on('value', (snapshot) => {
+    database.ref('characters').orderByKey().on('value', (snapshot) => {
       this.setState({
         characters: snapshot.val()
       });
